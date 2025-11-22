@@ -39,12 +39,14 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8">
+            <nav className="hidden md:flex gap-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
                 to={link.href}
-                className="text-darkGrayishBlue hover:text-veryDarkBlue relative after:content-[''] after:absolute after:bottom-[-2.25rem] after:left-0 after:w-full after:h-1 after:bg-orange after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+                onClick={(e) => e.preventDefault()}
+                aria-disabled="true"
+                className="text-darkGrayishBlue hover:text-veryDarkBlue relative after:content-[''] after:absolute after:bottom-[-2.25rem] after:left-0 after:w-full after:h-1 after:bg-orange after:scale-x-0 hover:after:scale-x-100 after:transition-transform cursor-not-allowed"
               >
                 {link.label}
               </NavLink>
